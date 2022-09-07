@@ -19,15 +19,18 @@ const VoiceRSS={speech:function(e){this._validate(e),this._request(e)},_validate
 //   });
 // }
 // test();
+//get Jokes from Joke API
 async function getJokes(){
   let joke = '';
-  const apiUrl = ' https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit';
+  //const apiUrl = ' https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit';
+  const apiUrl = ' https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit';
   try {
+    
     const response = await fetch(apiUrl);
     const data = await response.json();
     if (data.setup){
-      joke = `${data.setup} ... ${data.delivery}`;
-    }else {
+      joke = `${data.setup} ...... ${data.delivery}`;
+    } else {
       joke =data.joke;
     }
     console.log(joke);
@@ -37,4 +40,4 @@ async function getJokes(){
   }
   
 }
-getJokes();
+getJokes(); 
